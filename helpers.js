@@ -17,6 +17,14 @@ const rotatedArr = people.slice(1).concat(people.slice(0, 1));
 const formatedDate = new Date().toISOString().substring(0, 13)
 
 /* Writes and overwrites a JSON file and save it into frontend/public folder */
+const output = []
+output.push({
+  repo: d.owner.html_url,
+  name: d.name,
+  url: d.clone_url,
+  failed: negativeResults(repolinterConnect.results),
+  passed: positiveResults(repolinterConnect.results),
+})
 const createJsonDashboardFile = async function (output) {
   const directory = path.resolve(__dirname, '..', 'frontend', 'public')
 
