@@ -1,26 +1,22 @@
 const team = require('./team.json');
 
 /* get rotation array */
-const getRotation = team[0].onDuty;
-// console.log(getRotation);
+const getRotation = team[1].teamHistory;
 
 /* Rotate positions */
 let rotated = getRotation.push(getRotation.shift());
-console.log(rotated)
 
 /* Find last date */
-// const lastDate = 'Wed Jan 19 2022';
-const lastDate = team[0].onDuty.lastDate;
-//console.log(lastDate);
+const lastDate = team[0].lastDate;
 
-/* Find next date = 15 days interval */
+/* Find next date = every other week = 14 days interval */
 let next = new Date(new Date().setDate(new Date(lastDate).getDate() + 14)).toDateString();
-//console.log(next)
 
 /* Check if next position works, or needs to be redone */
 
 /* If position 0, points + 1 */
-/* If position 0, save next date in duty-date [] */
+/* If position 0, save next date in duty-date [] *
+
 
 /* If position 1, backup */
 
