@@ -5,6 +5,14 @@ function paul(arr) {
   return num < 40 ? 'Super happy!' : num < 70 ? 'Happy!' : num < 100 ? 'Sad!' : 'Miserable!';
 }
 
+/* Create array with team member name */
+let people = team.map((person) => person.name);
+// console.log("PEOPLE: ", people)
+
+/* Rotate array */
+const rotatedArr = people.slice(1).concat(people.slice(0, 1));
+// console.log("ROTATED: ", rotatedArr);
+
 /*transforms Date() into shorter string*/
 const formatedDate = new Date().toISOString().substring(0, 13)
 
