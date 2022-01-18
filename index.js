@@ -4,7 +4,7 @@ const team = require('./team.json');
 const getRotation = team[1].teamHistory;
 
 /* Rotate positions */
-let rotated = getRotation.push(getRotation.shift());
+//let rotated = getRotation.push(getRotation.shift());
 
 /* Find last date */
 const lastDate = team[0].lastDate;
@@ -14,13 +14,26 @@ let next = new Date(new Date().setDate(new Date(lastDate).getDate() + 14)).toDat
 
 /* Check if next position works, or needs to be redone */
 
-/* If position 0, points + 1 */
-/* If position 0, save next date in duty-date [] *
+/* Find position 0 and add 1 point */
+let addPoint = team[1].teamHistory[0].points + 1;
+team[1].teamHistory[0].points = addPoint;
+// let check = team[1].teamHistory[0]
+// console.log(check);
 
+/* Find position 0 and save next date in duty-date [] */
+let addNextDate = team[1].teamHistory[0].dutyDates;
+team[1].teamHistory[0].dutyDates.push(next);
+// let check = team[1].teamHistory[0].dutyDates
+// console.log(check);
 
-/* If position 1, backup */
+/* Find position 1 and save it as backup */
+let addBackup = team[1].teamHistory[1].name;
+team[0].backup = addBackup;
+// let check = team[0].backup
+// console.log(check);
 
 /* Print next and backup */
+
 
 /* Save changes in team.json file
  * rotated array
