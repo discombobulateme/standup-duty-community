@@ -1,6 +1,6 @@
 [
   {
-    "lastDate": "",
+    "lastDate": "Wed Jan 05 2022",
     "lastPeoples": [],
     "nextDate": "Wed Jan 19 2022",
     "onDuty": "Laura Thomas",
@@ -11,49 +11,41 @@
       {
         "name": "Laura Thomas",
         "points": 1,
-        "position": 0,
         "dutyDates": ["Wed Jan 19 2022"]
       },
       {
         "name": "Lysanne Pinto",
         "points": 0,
-        "position": 1,
         "dutyDates": []
       },
       {
         "name": "Meredith Volk",
         "points": 0,
-        "position": 2,
         "dutyDates": []
       },
       {
         "name": "Nancy Sweeney",
         "points": 0,
-        "position": 3,
         "dutyDates": []
       },
       {
         "name": "Paloma Oliveira",
         "points": 0,
-        "position": 4,
         "dutyDates": []
       },
       {
         "name": "Rachel Andre",
         "points": 0,
-        "position": 5,
         "dutyDates": []
       },
       {
         "name": "James Tacker",
         "points": 0,
-        "position": 6,
         "dutyDates": []
       },
       {
         "name": "Kim Pohas",
         "points": 0,
-        "position": 7,
         "dutyDates": []
       }
     ]
