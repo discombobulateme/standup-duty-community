@@ -1,0 +1,57 @@
+[
+  {
+    "onDuty": [
+      {
+        "lastDate": "Wed Jan 19 2022"
+      },
+      {
+        "name": "James Tacker",
+        "points": 0,
+        "position": 0,
+        "duty-dates": []
+      },
+      {
+        "name": "Kim Pohas",
+        "points": 0,
+        "position": 1,
+        "duty-dates": []
+      },
+      {
+        "name": "Laura Thomas",
+        "points": 0,
+        "position": 2,
+        "duty-dates": []
+      },
+      {
+        "name": "Lysanne Pinto",
+        "points": 0,
+        "position": 3,
+        "duty-dates": []
+      },
+      {
+        "name": "Meredith Volk",
+        "points": 0,
+        "position": 4,
+        "duty-dates": []
+      },
+      {
+        "name": "Nancy Sweeney",
+        "points": 0,
+        "position": 5,
+        "duty-dates": []
+      },
+      {
+        "name": "Paloma Oliveira",
+        "points": 0,
+        "position": 6,
+        "duty-dates": []
+      },
+      {
+        "name": "Rachel Andre",
+        "points": 0,
+        "position": 7,
+        "duty-dates": []
+      }
+    ]
+  }
+]
