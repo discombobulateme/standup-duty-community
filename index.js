@@ -1,4 +1,7 @@
-const team = require('./team.json');
+import chalk from 'chalk';
+import { createRequire } from "module";
+const require = createRequire(import.meta.url);
+const team = require("./team.json");
 
 /* get rotation array */
 const getRotation = team[1].teamHistory;
@@ -15,6 +18,8 @@ let next = new Date(new Date().setDate(new Date(lastDate).getDate() + 14)).toDat
 /* Check if next position works, or needs to be redone */
 
 /* Find position 0 and add 1 point */
+let onDuty = team[1].teamHistory[0].name;
+//console.log(onDuty)
 let addPoint = team[1].teamHistory[0].points + 1;
 team[1].teamHistory[0].points = addPoint;
 // let check = team[1].teamHistory[0]
@@ -33,7 +38,11 @@ team[0].backup = addBackup;
 // console.log(check);
 
 /* Print next and backup */
-
+console.log(chalk(`
+  Next duty date will be on {blue ${next}}
+  On duty is: {green ${onDuty}}
+  Backup is: {pink ${addBackup}}
+`))
 
 /* Save changes in team.json file
  * rotated array
