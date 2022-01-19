@@ -38,11 +38,11 @@ team[0].backup = addBackup;
 // console.log(check);
 
 /* Print next and backup */
-console.log(chalk(`
-  Next duty date will be on {blue ${next}}
-  On duty is: {green ${onDuty}}
-  Backup is: {pink ${addBackup}}
-`))
+console.log(`
+  Next duty date will be on ${chalk.yellowBright(next)}
+  On duty is: ${chalk.green(onDuty)}
+  Backup is: ${chalk.magenta(addBackup)}
+`)
 
 /* Save changes in team.json file
  * rotated array
