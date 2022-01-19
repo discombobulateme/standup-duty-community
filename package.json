@@ -2,6 +2,7 @@
   "name": "standup-duty-community",
   "version": "1.0.0",
   "description": "A simple stand-up duty script to know how is next",
+  "type": "module",
   "main": "index.js",
   "scripts": {
     "test": "test"
@@ -13,5 +14,8 @@
     "community"
   ],
   "author": "discombobulateme",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "5.0.0"
+  }
 }
