@@ -1,13 +1,17 @@
-import chalk from 'chalk';
 import { createRequire } from "module";
 const require = createRequire(import.meta.url);
+const fs = require('fs');
+const path = require('path');
+
+import chalk from 'chalk';
+
 const team = require("./team.json");
 
 /* get rotation array */
 const getRotation = team[1].teamHistory;
 
 /* Rotate positions */
-//let rotated = getRotation.push(getRotation.shift());
+let rotated = getRotation.push(getRotation.shift());
 
 /* Find last date */
 const lastDate = team[0].lastDate;
@@ -50,3 +54,11 @@ console.log(`
  * add duty-date to position 0
  * add points to position
  */
+const __dirname = path.resolve(path.dirname(''));
+
+fs.writeFile(path.join(__dirname, './team.json'), team, JSON.stringify(team),
+  function writeJSON(err) {
+    if (err) return console.log(err);
+    console.log(JSON.stringify(team));
+    console.log('writing to ' + team);
+});
