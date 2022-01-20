@@ -1,22 +1,19 @@
 [
   {
     "lastDate": "Wed Jan 05 2022",
-    "lastPeoples": [],
+    "lastPeople": "Last onDuty: Laura Thomas. Last backup: Lysanne Pinto",
     "nextDate": "Wed Jan 19 2022",
-    "onDuty": "Laura Thomas",
-    "backup": "Lysanne Pinto"
+    "onDuty": "Lysanne Pinto",
+    "backup": "Meredith Volk"
   },
   {
     "teamHistory": [
       {
-        "name": "Laura Thomas",
-        "points": 1,
-        "dutyDates": ["Wed Jan 19 2022"]
-      },
-      {
         "name": "Lysanne Pinto",
-        "points": 0,
-        "dutyDates": []
+        "points": 1,
+        "dutyDates": [
+          "Wed Jan 19 2022"
+        ]
       },
       {
         "name": "Meredith Volk",
@@ -47,6 +44,13 @@
         "name": "Kim Pohas",
         "points": 0,
         "dutyDates": []
+      },
+      {
+        "name": "Laura Thomas",
+        "points": 1,
+        "dutyDates": [
+          "Wed Jan 19 2022"
+        ]
       }
     ]
   }
