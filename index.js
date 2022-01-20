@@ -7,58 +7,72 @@ import chalk from 'chalk';
 
 const team = require("./team.json");
 
-/* get rotation array */
-const getRotation = team[1].teamHistory;
+/* Get team array to be rotated */
+const teamArray = team[1].teamHistory;
+// console.log(teamArray)
 
-/* Rotate positions */
-let rotated = getRotation.push(getRotation.shift());
+/* Write last onDuty and last backup to keep track */
+let lastOnDuty = team[1].teamHistory[0].name;
+let lastBackup = team[1].teamHistory[1].name;
+team[0].lastPeople = `Last onDuty: ${lastOnDuty}. Last backup: ${lastBackup}`
+
+/* Rotate team array positions */
+let rotate = teamArray.push(teamArray.shift());
+// console.log(teamArray)
+
+/* Writes the rotated value in the json array */
+team[1].teamHistory = teamArray;
 
 /* Find last date */
 const lastDate = team[0].lastDate;
+// console.log(lastDate)
+team[0].lastDate = lastDate;
 
 /* Find next date = every other week = 14 days interval */
 let next = new Date(new Date().setDate(new Date(lastDate).getDate() + 14)).toDateString();
+// console.log(next)
+team[0].nextDate = next;
 
 /* Check if next position works, or needs to be redone */
 
-/* Find position 0 and add 1 point */
+/* Find position 0 and write it as onDuty */
 let onDuty = team[1].teamHistory[0].name;
-//console.log(onDuty)
-let addPoint = team[1].teamHistory[0].points + 1;
-team[1].teamHistory[0].points = addPoint;
-// let check = team[1].teamHistory[0]
-// console.log(check);
+// console.log(onDuty)
+team[0].onDuty = onDuty;
 
-/* Find position 0 and save next date in duty-date [] */
-let addNextDate = team[1].teamHistory[0].dutyDates;
+/* Add 1 point to position 0 */
+let addPoint = team[1].teamHistory[0].points + 1;
+// console.log(addPoint);
+team[1].teamHistory[0].points = addPoint;
+
+/* Save next date in duty-date [] onm position 0 */
 team[1].teamHistory[0].dutyDates.push(next);
 // let check = team[1].teamHistory[0].dutyDates
 // console.log(check);
 
 /* Find position 1 and save it as backup */
-let addBackup = team[1].teamHistory[1].name;
-team[0].backup = addBackup;
-// let check = team[0].backup
-// console.log(check);
+let backup = team[1].teamHistory[1].name;
+// console.log(backup);
+team[0].backup = backup;
 
 /* Print next and backup */
 console.log(`
   Next duty date will be on ${chalk.yellowBright(next)}
   On duty is: ${chalk.green(onDuty)}
-  Backup is: ${chalk.magenta(addBackup)}
+  Backup is: ${chalk.magenta(backup)}
 `)
 
 /* Save changes in team.json file
  * rotated array
- * positions
  * add duty-date to position 0
- * add points to position
+ * add points to position 0
+ * backup
  */
+
+/* JSON.stringify(Object, format not to be in one line, spaces indentation) */
 const __dirname = path.resolve(path.dirname(''));
 
-fs.writeFile(path.join(__dirname, './team.json'), team, JSON.stringify(team),
+fs.writeFile(path.join(__dirname, './team.json'), JSON.stringify(team, null, 2),
   function writeJSON(err) {
     if (err) return console.log(err);
-    console.log(JSON.stringify(team));
-    console.log('writing to ' + team);
 });
