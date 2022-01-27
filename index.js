@@ -1,9 +1,6 @@
-import { createRequire } from "module";
-const require = createRequire(import.meta.url);
-const fs = require('fs');
+const fs = require('fs/promises');
 const path = require('path');
-
-import chalk from 'chalk';
+const colors = require('ansi-colors');
 
 const team = require("./team.json");
 
@@ -29,9 +26,9 @@ GivenDate = new Date(GivenDate);
 
 if(GivenDate > CurrentDate){
   console.log(`
-  Next duty date will be on ${chalk.yellowBright(next)}
-  On duty is: ${chalk.green(team[1].teamHistory[0].name)}
-  Backup is: ${chalk.magenta(team[1].teamHistory[1].name)}
+  Next duty date will be on ${colors.greenBright(next)}
+  On duty is: ${colors.magentaBright(team[1].teamHistory[0].name)}
+  Backup is: ${colors.yellow(team[1].teamHistory[1].name)}
 `)
   process.exit()
 }
@@ -47,8 +44,8 @@ let rotate = teamArray.push(teamArray.shift());
 /* Writes the rotated value in the json array */
 team[1].teamHistory = teamArray;
 
-
 /* Check if next position works, or needs to be redone */
+
 
 /* Find position 0 and write it as onDuty */
 let onDuty = team[1].teamHistory[0].name;
@@ -72,10 +69,10 @@ team[0].backup = backup;
 
 /* Print next and backup */
 console.log(`
-  Next duty date will be on ${chalk.yellowBright(next)}
-  On duty is: ${chalk.green(onDuty)}
-  Backup is: ${chalk.magenta(backup)}
-`)
+  Next duty date will be on ${colors.greenBright(next)}
+  On duty is: ${colors.magentaBright(onDuty)}
+  Backup is: ${colors.yellow(backup)}
+`);
 
 /* Save changes in team.json file
  * rotated array
@@ -85,9 +82,9 @@ console.log(`
  */
 
 /* JSON.stringify(Object, format not to be in one line, spaces indentation) */
-const __dirname = path.resolve(path.dirname(''));
-
 fs.writeFile(path.join(__dirname, './team.json'), JSON.stringify(team, null, 2),
   function writeJSON(err) {
     if (err) return console.log(err);
 });
+
+module.exports= { sum };
