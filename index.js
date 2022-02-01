@@ -85,6 +85,8 @@ console.log(`
 fs.writeFile(path.join(__dirname, './team.json'), JSON.stringify(team, null, 2),
   function writeJSON(err) {
     if (err) return console.log(err);
-});
+  });
+
+  /* add catch error if person does not exist, add test to it */
 
 module.exports= { sum };
