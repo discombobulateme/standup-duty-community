@@ -10,7 +10,7 @@ describe('Check team', function () {
     team[1].should.have.property('teamHistory').with.lengthOf(8);
   });
 
-  it('onduty and index 0 should should be the same person', function () {
+  it('onduty and index 0 should be the same person', function () {
     const onduty = team[1].teamHistory[0].name;
     const index0 = team[0].onDuty;
     assert.equal(onduty, index0);
