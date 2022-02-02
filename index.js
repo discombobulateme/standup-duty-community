@@ -6,12 +6,13 @@ const team = require("./team.json");
 
 /* Find last date */
 const lastDate = team[0].lastDate;
-// console.log(lastDate)
+
 team[0].lastDate = lastDate;
 
 /* Find next date = every other week = 14 days interval */
-let next = new Date(new Date().setDate(new Date(lastDate).getDate() + 14)).toDateString();
-// console.log(next)
+const last = new Date(lastDate);
+const next = new Date(last.setDate(last.getDate() + 14)).toDateString();
+
 team[0].nextDate = next;
 
 /* Write last onDuty and last backup to keep track */
@@ -20,11 +21,11 @@ let lastBackup = team[1].teamHistory[1].name;
 team[0].lastPeople = `Last onDuty: ${lastOnDuty}. Last backup: ${lastBackup}`
 
 /* Find today to know if next is past or future */
-let GivenDate = next;
-var CurrentDate = new Date();
-GivenDate = new Date(GivenDate);
+let GivenDate = new Date(next);
+let CurrentDate = new Date();
+//console.log("CurrentDate", CurrentDate);
 
-if(GivenDate > CurrentDate){
+if( GivenDate >= CurrentDate ) {
   console.log(`
   Next duty date will be on ${colors.greenBright(next)}
   On duty is: ${colors.magentaBright(team[1].teamHistory[0].name)}
@@ -87,4 +88,4 @@ fs.writeFile(path.join(__dirname, './team.json'), JSON.stringify(team, null, 2),
     if (err) return console.log(err);
   });
 
-module.exports= { sum };
+// module.exports= { sum };
