@@ -1,22 +1,30 @@
 [
   {
     "lastDate": "Wed Jan 19 2022",
-    "lastPeople": "Last onDuty: Laura Thomas. Last backup: Lysanne Pinto",
+    "lastPeople": "Last onDuty: Laura Thomas. Last backup: Rachel Andre",
     "nextDate": "Wed Feb 02 2022",
-    "onDuty": "Lysanne Pinto",
-    "backup": "Meredith Volk"
+    "onDuty": "Rachel Andre",
+    "backup": "Paloma Oliveira"
   },
   {
     "teamHistory": [
       {
-        "name": "Lysanne Pinto",
+        "name": "Rachel Andre",
         "points": 1,
-        "dutyDates": [
-          "Wed Jan 19 2022"
-        ]
+        "dutyDates": ["Wed Feb 02 2022"]
       },
       {
-        "name": "Meredith Volk",
+        "name": "Paloma Oliveira",
+        "points": 0,
+        "dutyDates": []
+      },
+      {
+        "name": "Lysanne Painto",
+        "points": 0,
+        "dutyDates": []
+      },
+      {
+        "name": "Kim Pohas",
         "points": 0,
         "dutyDates": []
       },
@@ -26,24 +34,16 @@
         "dutyDates": []
       },
       {
-        "name": "Paloma Oliveira",
-        "points": 0,
-        "dutyDates": []
-      },
-      {
-        "name": "Rachel Andre",
-        "points": 0,
-        "dutyDates": []
-      },
-      {
         "name": "James Tacker",
         "points": 0,
         "dutyDates": []
       },
       {
-        "name": "Kim Pohas",
-        "points": 0,
-        "dutyDates": []
+        "name": "Meredith Volk",
+        "points": 1,
+        "dutyDates": [
+          "Wed Jan 19 2022"
+        ]
       },
       {
         "name": "Laura Thomas",
