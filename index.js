@@ -1,6 +1,7 @@
 const fs = require('fs/promises');
 const path = require('path');
 const colors = require('ansi-colors');
+require('dotenv').config();
 
 const team = require("./team.json");
 
@@ -73,4 +74,9 @@ fs.writeFile(path.join(__dirname, './team.json'), JSON.stringify(team, null, 2),
     if (err) return console.log(err);
   });
 
-// module.exports= { sum };
+module.exports = {
+  slack: {
+    signinSecret: process.env.SLACK_SIGNIN_SECRET,
+    token: process.env.SLACK_TOKEN
+  }
+};
