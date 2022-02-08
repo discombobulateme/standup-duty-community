@@ -1,7 +1,6 @@
 const fs = require('fs/promises');
 const path = require('path');
 const colors = require('ansi-colors');
-require('dotenv').config();
 
 const team = require("./team.json");
 
