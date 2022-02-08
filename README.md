@@ -1,14 +1,16 @@
 # standup-duty
 
-A tool to automate who is on standup duty, based on [Live testing Team tool](https://gitlab.prod.sjc3.saucelabs.net/live/standup-duty).
+A tool that automatically rotates a team and informs through a message sent to Slack who is on duty.
 
 Which team member is chosen for duty is based on a weighed system. The longer the person hasn't been on standup duty or backup standup duty, the higher their score gets.
 
 The tool also automatically considers out of office events fom the BambooHR "Who's out" calendar, which is why a small custom setup is required (more on that in the setup section).
 
-When running the tool, it returns a preformatted message that can be simply posted in the team's Slack channel.
+Tool runs automatically every twoo weeks (time is configurable) using GitHub Actions, it returns a message posted in the team's Slack channel.
 
-## Setup
+## Setup & Bamboo integration
+
+Bamboo Integration is inspired by [Live testing Team tool](https://gitlab.prod.sjc3.saucelabs.net/live/standup-duty).
 
 1) Clone this repository to your local machine.
 2) For best results run `nvm use` in the main directory.
@@ -28,9 +30,9 @@ export default {
 
 That should be all you need to do to prepare the tool.
 
-## Usage
+## Running locally
 
-For the general usage, you just need to run `npm start`. This will lead the main script to calculate which team members are on standup duty next and provides the corresponding Slack message.
+For the general usage, you just need to run `npm start`. This will lead the main script to calculate which team members are on duty next.
 
 ## Team changes
 

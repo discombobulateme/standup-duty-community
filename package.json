@@ -4,7 +4,8 @@
   "description": "A simple stand-up duty script to know how is next",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "start": "node index.js"
   },
   "keywords": [
     "standup",
