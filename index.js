@@ -40,6 +40,8 @@ team[1].teamHistory = teamArray;
 
 /* Check if next position works, or needs to be redone */
 
+
+
 /* ONDUTY & BACKUP PERSON UPDATE */
 /* Find position 0 and write it as onDuty */
 let onDuty = team[1].teamHistory[0].name;

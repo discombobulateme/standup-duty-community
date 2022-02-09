@@ -1,14 +1,21 @@
+const fs = require('fs/promises');
+const ical = ('node-ical');
+
+const config = ('./config-local.js');
+
+const file = require('./team.json');
+
 // Load array of people in the standup rotation
-const peopleFileContent = await fs.readFile(path.resolve() + '/PEOPLE.csv');
-const peopleData = csvParse(peopleFileContent, { columns: true });
+let team = file[1].teamHistory.map(i => i.name);
+//console.log(team);
 
 // Load all out of office events of company employees
-let timeOffCalendarResponse = await fetch(config.BAMBOOHR_OUT_OF_OFFICE_CALENDAR_URL);
-const timeOffCalendarResponseBody = await timeOffCalendarResponse.text();
+let timeOffCalendarResponse = async() => await fetch(config.BAMBOOHR_OUT_OF_OFFICE_CALENDAR_URL);
+const timeOffCalendarResponseBody = async () => await timeOffCalendarResponse.text();
 const outOfOfficeEvents = ical.sync.parseICS(timeOffCalendarResponseBody);
 
 // Enrich people data with out of office events
-for (const person of peopleData) {
+for (const person of team) {
   person.timeOff = Object.values(outOfOfficeEvents).filter((event) => event.summary.includes(person.name));
 }
 
