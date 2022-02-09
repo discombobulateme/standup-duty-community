@@ -10,9 +10,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Notify slack open
+    - name: Notify slack private
       env:
         SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
       uses: pullreminders/slack-action@master
       with:
-        args: '{\"channel\":\"C032C0JMEBD\",\"text\":\"Hello world\"}'
+        args: '{\"channel\":\"C03138JNKHR\",\"text\":\"=^..^=\"}'
