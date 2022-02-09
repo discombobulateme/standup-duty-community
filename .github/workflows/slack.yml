@@ -2,16 +2,17 @@ name: Slack Notifications
 
 on:
   pull_request:
-    branches: [main]
+    branches: [ main ]
 
 jobs:
   notifySlack:
+
     runs-on: ubuntu-latest
 
     steps:
     - name: Notify slack
-    env:
-    SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
-    uses: pullreminders/slack-action@master
-    with:
-      args: '{\"channel\":\"C032C0JMEBD\",\"text\":\"Hello world\"}'
+      env:
+        SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+      uses: abinoda/slack-action@master
+      with:
+        args: '{\"channel\":\"C032C0JMEBD\",\"text\":\"Sorry I am late\"}'
