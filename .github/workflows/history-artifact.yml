@@ -1,0 +1,33 @@
+name: Create Artifact
+
+on:
+  pull_request:
+    branches: [ main ]
+  schedule:
+    - cron: '0 0 * * 1'
+
+jobs:
+  Lint-Deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup
+        uses: actions/checkout@v2
+
+      - name: Setup Node Version
+        uses: actions/setup-node@v1
+        with:
+          node-version: '14'
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Generate Data
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node index.js
+
+      - name: Generate Artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: team-history
+          path: team-backup.json
