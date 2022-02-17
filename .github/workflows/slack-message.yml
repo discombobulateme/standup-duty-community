@@ -1,0 +1,18 @@
+name: Slack Notifications
+
+on:
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  notifySlack:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Notify Slack
+      env:
+        SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+      uses: pullreminders/slack-action@master
+      with:
+        args: '{\"channel\":\"C03138JNKHR\",\"text\":\"=^..^=\"}'
